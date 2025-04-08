@@ -1,12 +1,17 @@
 CXX := emcc
 
-BUILD_DIR := ./build
+TARGET := classes.js
+BUILD_DIR := build
 
-SOURCES := $(wildcard *.cpp)
+SRCS := $(wildcard *.cpp)
 
-all: 
+all: $(BUILD_DIR) $(TARGET)
+
+$(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
-	${CXX} -lembind -o $(BUILD_DIR)/classes.js ${SOURCES}
+
+$(TARGET): 
+	${CXX} -lembind -o $(BUILD_DIR)/$(TARGET) ${SRCS}
 
 clean:
 	rm -rf $(BUILD_DIR)
