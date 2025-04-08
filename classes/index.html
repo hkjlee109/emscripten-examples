@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <script src="./build/classes.js"></script>
+    <script>
+        addOnPostRun(function() { 
+            console.log('# classes example #');
+	        var instance = new Module.classes_t(10, "hello");
+	        console.log(instance);
+	        instance.increment_x();
+	        console.log(instance.x);
+	        instance.x; 
+	        console.log(instance.x);
+	        instance.x = 20; 
+	        console.log(instance.x);
+	        var string = Module.classes_t.get_string_from_instance(instance);
+	        console.log(string);
+	        instance.delete();
+        });
+    </script>
+</html>
