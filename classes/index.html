@@ -3,18 +3,19 @@
     <script src="./build/classes.js"></script>
     <script>
         addOnPostRun(function() { 
-            console.log('# classes example #');
-	        var instance = new Module.classes_t(10, "hello");
-	        console.log(instance);
-	        instance.increment_x();
-	        console.log(instance.x);
-	        instance.x; 
-	        console.log(instance.x);
-	        instance.x = 20; 
-	        console.log(instance.x);
-	        var string = Module.classes_t.get_string_from_instance(instance);
-	        console.log(string);
-	        instance.delete();
+			console.log('# classes example #');
+			var instance = new Module.dog_t("Snoopy", 10);
+			console.log(instance);
+
+			console.log(instance.speak());
+			console.log(instance.name);
+			console.log(instance.get_age());
+
+			instance.name = "Mary";
+			console.log(instance.name);
+			console.log(Module.animal_t.get_name_from_instance(instance));
+
+			instance.delete();
         });
     </script>
 </html>
