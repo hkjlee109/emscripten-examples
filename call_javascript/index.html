@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <script src="./build/call_javascript.js"></script>
+
+    <script>
+        addOnPostRun(function() { 
+            console.log('# call-javascript example #');
+
+			var instance = new Module.mut_t();
+			console.log(instance);
+
+            instance.call();
+
+			instance.delete();
+        });
+    </script>
+
+    <body>
+        <canvas id="gl-canvas" width="640" height="480"></canvas>
+    </body>
+</html>
