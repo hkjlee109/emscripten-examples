@@ -13,14 +13,18 @@
                 __destruct: function() {
                     this.__parent.__destruct.call(this);
                 },
-                invoke: function(string) {
+                invoke_type_1: function(string) {
+                    console.log(string)
+                },
+                invoke_type_2: function(string) {
                     console.log(string)
                 },
             });
 
             var instance = new c;
             console.log(instance);
-            instance.invoke('hello');
+            instance.invoke_type_1('hello');
+            instance.invoke_type_2('world');
         });
     </script>
 </html>
