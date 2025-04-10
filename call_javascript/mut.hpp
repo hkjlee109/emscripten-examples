@@ -13,7 +13,8 @@ public:
     void call();
 };
 
-EMSCRIPTEN_BINDINGS(mut_t) {
+EMSCRIPTEN_BINDINGS(mut_t) 
+{
     emscripten::class_<mut_t>("mut_t")
         .constructor<>()
         .function("call", &mut_t::call);

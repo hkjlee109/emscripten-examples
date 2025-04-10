@@ -19,7 +19,8 @@ public:
     }
 };
 
-EMSCRIPTEN_BINDINGS(dog_t) {
+EMSCRIPTEN_BINDINGS(dog_t) 
+{
     emscripten::class_<animal_t>("animal_t")
         .function("get_age", &animal_t::get_age)
         .class_function("get_name_from_instance", &animal_t::get_name_from_instance);
