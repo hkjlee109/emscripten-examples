@@ -36,11 +36,6 @@ private:
     std::vector<command_t> _commands;
 };
 
-
-std::vector<command_t> * convertCommandVectorFromPtr(uintptr_t ptr) {
-    return reinterpret_cast<std::vector<command_t> *>(ptr);
-}
-
 EMSCRIPTEN_BINDINGS(data_out) 
 {
     emscripten::value_object<command_t>("command_t")
@@ -51,9 +46,6 @@ EMSCRIPTEN_BINDINGS(data_out)
     emscripten::class_<mut_t>("mut_t")
         .constructor<>()
         .function("flush", &mut_t::flush);
-        
-    emscripten::register_vector<command_t>("command_vector_t")
-        .constructor(&convertCommandVectorFromPtr, emscripten::allow_raw_pointers());
 }
 
 } // data_out

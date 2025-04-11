@@ -3,7 +3,7 @@
 namespace data_out {
 
 extern "C" {
-    extern void render(std::vector<command_t> commands, uint16_t size);
+    extern void render(command_t *commands, uint16_t size);
 } // "C"
 
 mut_t::mut_t()
@@ -15,7 +15,7 @@ mut_t::mut_t()
 
 void mut_t::flush()
 {
-    render(_commands, _commands.size());
+    render(_commands.data(), _commands.size());
 }
 
 } // data_out
