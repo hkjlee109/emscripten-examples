@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <script src="./build/data_out.js"></script>
+    <script>
+        addOnPostRun(function() { 
+			console.log('# data_out example #');
+			var instance = new Module.mut_t();
+			console.log(instance);
+
+			instance.flush();
+
+			instance.delete();
+        });
+    </script>
+</html>
